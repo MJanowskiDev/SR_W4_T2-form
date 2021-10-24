@@ -26,7 +26,7 @@ const MainForm = () => {
 
 	const checkIfAnyIsEmpty = (formState) => {
 		let retVal;
-		Object.keys(formState).map((key) => {
+		Object.keys(formState).forEach((key) => {
 			retVal = retVal || formState[key].isEmpty;
 		});
 
