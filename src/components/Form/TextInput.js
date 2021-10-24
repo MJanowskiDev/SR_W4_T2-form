@@ -1,12 +1,22 @@
 import { styles } from './styles';
+import RequiredError from './RequiredError';
 
-const TextInput = ({ name, label, props }) => {
+const TextInput = ({ name, label, onChange, showError, props }) => {
+	const onChangeHandle = (e) => {
+		onChange && onChange(e);
+	};
 	return (
 		<div style={styles.container}>
 			<label style={styles.label} htmlFor={name}>
 				{label}
 			</label>
-			<input style={styles.input} name={name} {...props} />
+			<input
+				onChange={onChangeHandle}
+				style={showError ? styles.inputError : styles.input}
+				name={name}
+				{...props}
+			/>
+			<RequiredError show={showError} />
 		</div>
 	);
 };

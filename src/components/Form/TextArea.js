@@ -1,12 +1,21 @@
 import { styles } from './styles';
-
-const TextArea = ({ name, label, props }) => {
+import RequiredError from './RequiredError';
+const TextArea = ({ name, label, onChange, showError, props }) => {
+	const onChangeHandle = (e) => {
+		onChange && onChange(e);
+	};
 	return (
 		<div style={styles.container}>
 			<label style={styles.label} htmlFor={name}>
 				{label}
 			</label>
-			<textarea style={styles.textarea} name={name} {...props} />
+			<textarea
+				onChange={onChangeHandle}
+				style={showError ? styles.inputError : styles.input}
+				name={name}
+				{...props}
+			/>
+			<RequiredError show={showError} />
 		</div>
 	);
 };

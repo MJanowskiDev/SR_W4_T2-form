@@ -1,4 +1,5 @@
 const border = '1px solid black';
+const borderError = '1px solid red';
 
 export const styles = {
 	container: {
@@ -17,6 +18,11 @@ export const styles = {
 		padding: 10,
 		border: border
 	},
+	inputError: {
+		borderRadius: 6,
+		padding: 10,
+		border: borderError
+	},
 	label: {
 		fontWeight: 700,
 		padding: '4px 0',
@@ -32,7 +38,7 @@ export const styles = {
 		letterSpacing: 2
 	},
 	form: {
-		width: 500,
+		width: '100%',
 		display: 'flex',
 		flexDirection: 'column',
 		gap: 16
@@ -54,5 +60,9 @@ export const styles = {
 		position: 'relative',
 		marginRight: 5,
 		fontStyle: 'italic'
+	},
+	requiredError: {
+		color: 'red',
+		padding: 5
 	}
 };

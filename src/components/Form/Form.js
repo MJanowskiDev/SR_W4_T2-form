@@ -1,8 +1,8 @@
 import { styles } from './styles';
 
-const Form = ({ children }) => {
+const Form = ({ children, onSubmit }) => {
 	const handleSubmit = (e) => {
-		e.preventDefault();
+		onSubmit && onSubmit(e);
 	};
 	return (
 		<form onSubmit={handleSubmit} style={styles.form}>

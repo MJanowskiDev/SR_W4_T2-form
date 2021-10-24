@@ -1,8 +1,11 @@
 import { styles } from './styles';
 
-const SubmitButton = ({ label, props }) => {
+const SubmitButton = ({ label, onClick, props }) => {
+	const onClickHandle = (e) => {
+		onClick && onClick(e);
+	};
 	return (
-		<button style={styles.button} type='submit' {...props}>
+		<button onClick={onClickHandle} style={styles.button} type='submit' {...props}>
 			{label}
 		</button>
 	);
