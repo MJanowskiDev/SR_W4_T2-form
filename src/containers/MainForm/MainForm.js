@@ -54,37 +54,32 @@ const MainForm = () => {
 		<Form onSubmit={onFormSubmitHandle}>
 			<TextInput
 				onChange={changedHandle}
-				showError={showError && formState['name'].isEmpty}
-				name='name'
-				label='Name'
+				showError={showError && formState.name.isEmpty}
+				name="name"
+				label="Name"
 			/>
 			<TextInput
 				onChange={changedHandle}
-				showError={showError && formState['email'].isEmpty}
-				name='email'
-				label='Email'
+				showError={showError && formState.email.isEmpty}
+				name="email"
+				label="Email"
 				props={{ type: 'email' }}
 			/>
-			<TextArea
-				onChange={changedHandle}
-				showError={showError && formState['bio'].isEmpty}
-				name='bio'
-				label='Bio'
-			/>
+			<TextArea onChange={changedHandle} showError={showError && formState.bio.isEmpty} name="bio" label="Bio" />
 			<RadioInput
 				onChange={changedHandle}
-				label='Sex'
-				name='sex'
-				showError={showError && formState['sex'].isEmpty}
+				label="Sex"
+				name="sex"
+				showError={showError && formState.bio.isEmpty}
 				options={[ { label: 'female', value: 'Female' }, { label: 'male', value: 'Male' } ]}
 			/>
 			<CheckBox
 				onChange={changedHandle}
-				name='terms'
-				showError={(showError && formState['terms'].isEmpty) || formState['terms'].value === 'unchecked'}
-				label='I agree to the terms of service'
+				name="terms"
+				showError={(showError && formState.terms.isEmpty) || formState.terms.value === 'unchecked'}
+				label="I agree to the terms of service"
 			/>
-			<SubmitButton onClick={onSubmitClickHandle} label='Submit' />
+			<SubmitButton onClick={onSubmitClickHandle} label="Submit" />
 		</Form>
 	);
 
